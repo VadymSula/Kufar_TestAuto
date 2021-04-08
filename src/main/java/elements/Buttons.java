@@ -1,6 +1,7 @@
 package elements;
 
 import core.InitialDriver;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
@@ -10,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Buttons {
-    private AndroidDriver driver = InitialDriver.getDriver();
+    private AppiumDriver driver = InitialDriver.getDriver();
 
     public void searchAndClickButtonBy(WebElement webElement) {
         WebElement searchButton = new WebDriverWait(driver, 15)
@@ -18,7 +19,7 @@ public class Buttons {
         searchButton.click();
 
     }
-    public void clickButtonBackOnKeyboard() {
-        driver.pressKey(new KeyEvent(AndroidKey.BACK));
+    public void clickButtonBackOnKeyboard(AndroidDriver androidDriver) {
+        androidDriver.pressKey(new KeyEvent(AndroidKey.BACK));
     }
 }

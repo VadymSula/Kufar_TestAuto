@@ -1,6 +1,7 @@
 package core;
 
 import configs.PropertiesConfig;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.apache.log4j.Logger;
@@ -10,11 +11,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class InitialDriver {
-    static AndroidDriver driver;
+    static AppiumDriver driver;
     static DesiredCapabilities cap = new DesiredCapabilities();
     private static Logger log = Logger.getLogger(InitialDriver.class);
 
-    public static AndroidDriver getDriver() {
+    public static AppiumDriver getDriver() {
         if (driver == null) {
             try {
                 driver = initializeDriver();
@@ -26,9 +27,9 @@ public class InitialDriver {
         return driver;
     }
 
-    private static AndroidDriver initializeDriver() throws MalformedURLException {
+    private static AppiumDriver initializeDriver() throws MalformedURLException {
         setCapabilities();
-        return new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), cap);
+        return new AppiumDriver(new URL("http://0.0.0.0:4723/wd/hub"), cap);
     }
 
     private static void setCapabilities() {

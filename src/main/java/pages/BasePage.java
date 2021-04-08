@@ -20,7 +20,7 @@ public class BasePage {
         buttons = new Buttons();
         screen = new Screen();
         elements = new Elements();
-        this.driver = driver;
+        this.setDriver(driver);
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
@@ -38,4 +38,12 @@ public class BasePage {
 
     @AndroidFindBy(id = "se.scmv.belarus:id/menu_profile")
     protected WebElement MENU_PROFILE;
+
+    public AndroidDriver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(AndroidDriver driver) {
+        this.driver = driver;
+    }
 }

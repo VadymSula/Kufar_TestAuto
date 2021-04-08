@@ -37,7 +37,7 @@ public class Advert extends BasePage {
     @Step("Add advert to favorites")
     public void addAdToFavorites() {
         buttons.searchAndClickButtonBy(FAVORITE_ICON);
-        buttons.clickButtonBackOnKeyboard();
+        buttons.clickButtonBackOnKeyboard(getDriver());
     }
 
     @Step("Get advert title")
