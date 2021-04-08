@@ -1,12 +1,12 @@
-package pages.profile;
+package pages.android.profile;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
-import pages.BasePage;
+import pages.android.AndroidBasePage;
 
-public class Settings extends BasePage {
+public class Settings extends AndroidBasePage {
 
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout//android.view.ViewGroup[3]/android.widget.ImageView")
     private WebElement MY_PAY_CARDS;
@@ -30,7 +30,6 @@ public class Settings extends BasePage {
 
 
     public Settings(AndroidDriver driver) {
-
         super(driver);
     }
 

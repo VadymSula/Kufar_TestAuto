@@ -2,6 +2,7 @@ package elements;
 
 import core.InitialDriver;
 import enums.Direction;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.WaitOptions;
@@ -13,11 +14,11 @@ import java.time.Duration;
 
 
 public class Screen {
-    private AndroidDriver driver = InitialDriver.getDriver();
+    private AppiumDriver driver = InitialDriver.getDriver();
     private static Logger log = Logger.getLogger(Screen.class);
 
     public void scrollablePage(String text) {
-        driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textContains(" + "\"" + text + "\"" + ").instance(0));");
+        ((AndroidDriver) driver).findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textContains(" + "\"" + text + "\"" + ").instance(0));");
         log.info("Page is scrollable");
     }
 

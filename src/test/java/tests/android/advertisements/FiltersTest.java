@@ -1,24 +1,25 @@
-package tests.advertisements;
+package tests.android.advertisements;
 
 import core.InitialDriver;
+import io.appium.java_client.android.AndroidDriver;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.advertisements.Advert;
-import pages.advertisements.Advertisements;
-import pages.advertisements.Filters;
+import pages.android.advertisements.Advert;
+import pages.android.advertisements.Advertisements;
+import pages.android.advertisements.Filters;
 
 public class FiltersTest {
     private final String PRICE_FROM = "70000";
     private final String PRICE_TO = "90000";
     private String expectedTypeOfSection;
     private String expectedCountOfRooms;
-    Advert advert = new Advert(InitialDriver.getDriver());
-    Filters filters = new Filters(InitialDriver.getDriver());
-    Advertisements advertisements = new Advertisements(InitialDriver.getDriver());
+    Advert advert = new Advert((AndroidDriver) InitialDriver.getDriver());
+    Filters filters = new Filters((AndroidDriver) InitialDriver.getDriver());
+    Advertisements advertisements = new Advertisements((AndroidDriver) InitialDriver.getDriver());
 
     @BeforeTest
     public void chooseCategoriesOfAds() {

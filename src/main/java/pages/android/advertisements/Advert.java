@@ -1,12 +1,12 @@
-package pages.advertisements;
+package pages.android.advertisements;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
-import pages.BasePage;
+import pages.android.AndroidBasePage;
 
-public class Advert extends BasePage {
+public class Advert extends AndroidBasePage {
     @AndroidFindBy(id = "se.scmv.belarus:id/favoriteIcon")
     private WebElement FAVORITE_ICON;
     @AndroidFindBy(id = "se.scmv.belarus:id/title")

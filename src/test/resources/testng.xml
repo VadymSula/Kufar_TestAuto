@@ -3,54 +3,54 @@
 <suite name="Suite1" verbose="1">
 
     <listeners>
-        <listener class-name="tests.ListenerTest" />
+        <listener class-name="tests.android.ListenerTest" />
     </listeners>
 
     <test name="ProfilePageTests">
         <classes>
-            <class name="tests.profilePageTests.ProfilePageTests"/>
+            <class name="tests.android.profilePageTests.ProfilePageTests"/>
         </classes>
     </test>
 
     <test name="SettingsPageTests">
         <classes>
-            <class name="tests.profilePageTests.SettingsPageTests"/>
+            <class name="tests.android.profilePageTests.SettingsPageTests"/>
         </classes>
     </test>
 
     <test name="MyPayCardsTest" >
         <classes>
-            <class name="tests.profilePageTests.MyPayCardsTest"/>
+            <class name="tests.android.profilePageTests.MyPayCardsTest"/>
         </classes>
     </test>
 
     <test name="AdvertTests">
         <classes>
-            <class name="tests.advertTests.AdvertTests"/>
+            <class name="tests.android.advertTests.AdvertTests"/>
         </classes>
     </test>
 
     <test name="FavoritesSearchTest">
         <classes>
-            <class name="tests.favorites.FavoritesSearchTest"/>
+            <class name="tests.android.favorites.FavoritesSearchTest"/>
         </classes>
     </test>
 
     <test name="FavoritesSellersTest">
         <classes>
-            <class name="tests.favorites.FavoritesSellersTest"/>
+            <class name="tests.android.favorites.FavoritesSellersTest"/>
         </classes>
     </test>
 
     <test name="FavoritesAdsTest">
         <classes>
-            <class name="tests.favorites.FavoritesAdsTest"/>
+            <class name="tests.android.favorites.FavoritesAdsTest"/>
         </classes>
     </test>
 
     <test name="FiltersTest">
         <classes>
-            <class name="tests.advertisements.FiltersTest"/>
+            <class name="tests.android.advertisements.FiltersTest"/>
         </classes>
     </test>
 </suite>

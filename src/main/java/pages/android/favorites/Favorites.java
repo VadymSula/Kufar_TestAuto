@@ -1,13 +1,13 @@
-package pages.favorites;
+package pages.android.favorites;
 
 import enums.Direction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
-import pages.BasePage;
+import pages.android.AndroidBasePage;
 
-public class Favorites extends BasePage {
+public class Favorites extends AndroidBasePage {
     @AndroidFindBy(id = "se.scmv.belarus:id/menu_favorites")
     private WebElement MENU_FAVORITES;
     @AndroidFindBy(id = "se.scmv.belarus:id/login")

@@ -1,6 +1,7 @@
 package elements;
 
 import core.InitialDriver;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
@@ -10,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Elements {
 
-    private AndroidDriver driver = InitialDriver.getDriver();
+    private AppiumDriver driver = InitialDriver.getDriver();
     private static Logger log = Logger.getLogger(Elements.class);
 
 

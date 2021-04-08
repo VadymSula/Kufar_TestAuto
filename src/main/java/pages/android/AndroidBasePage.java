@@ -1,4 +1,4 @@
-package pages;
+package pages.android;
 
 import elements.Buttons;
 import elements.Elements;
@@ -9,14 +9,14 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-public class BasePage {
+public class AndroidBasePage {
     private AndroidDriver driver;
 
     protected Buttons buttons;
     protected Screen screen;
     protected Elements elements;
 
-    public BasePage(AndroidDriver driver) {
+    public AndroidBasePage(AndroidDriver driver) {
         buttons = new Buttons();
         screen = new Screen();
         elements = new Elements();

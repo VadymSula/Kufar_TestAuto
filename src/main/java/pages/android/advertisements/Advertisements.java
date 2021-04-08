@@ -1,12 +1,12 @@
-package pages.advertisements;
+package pages.android.advertisements;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
-import pages.BasePage;
+import pages.android.AndroidBasePage;
 
-public class Advertisements extends BasePage {
+public class Advertisements extends AndroidBasePage {
     @AndroidFindBy(id = "se.scmv.belarus:id/menu_listing")
     private WebElement ADS;
     @AndroidFindBy(id = "se.scmv.belarus:id/filtersButton")

@@ -1,13 +1,12 @@
-package pages.profile;
+package pages.android.profile;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
-import pages.BasePage;
+import pages.android.AndroidBasePage;
 
-public class Profile extends BasePage {
-
+public class Profile extends AndroidBasePage {
     @AndroidFindBy(xpath = "/hierarchy//android.widget.LinearLayout[3]/android.widget.TextView")
     private WebElement AD;
     @AndroidFindBy(xpath = "/hierarchy//android.widget.LinearLayout[4]/android.widget.TextView")

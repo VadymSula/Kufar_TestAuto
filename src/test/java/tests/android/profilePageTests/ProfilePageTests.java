@@ -1,19 +1,20 @@
-package tests.profilePageTests;
+package tests.android.profilePageTests;
 
 import core.InitialDriver;
 import enums.Credentials;
+import io.appium.java_client.android.AndroidDriver;
 import io.qameta.allure.Owner;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.SomeScreen;
-import pages.profile.Profile;
+import pages.android.SomeScreen;
+import pages.android.profile.Profile;
 
 
 public class ProfilePageTests {
-    SomeScreen someScreen = new SomeScreen(InitialDriver.getDriver());
-    Profile profile = new Profile(InitialDriver.getDriver());
+    SomeScreen someScreen = new SomeScreen((AndroidDriver) InitialDriver.getDriver());
+    Profile profile = new Profile((AndroidDriver) InitialDriver.getDriver());
 
     @BeforeTest
     public void setCap() {

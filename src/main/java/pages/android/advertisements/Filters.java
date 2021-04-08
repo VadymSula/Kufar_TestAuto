@@ -1,13 +1,13 @@
-package pages.advertisements;
+package pages.android.advertisements;
 
 import enums.Direction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
-import pages.BasePage;
+import pages.android.AndroidBasePage;
 
-public class Filters extends BasePage {
+public class Filters extends AndroidBasePage {
     @AndroidFindBy(id = "se.scmv.belarus:id/search")
     private WebElement SEARCH_FIELD;
     @AndroidFindBy(id = "se.scmv.belarus:id/searchFiltersButton")

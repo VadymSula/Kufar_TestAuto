@@ -1,16 +1,14 @@
-package pages.newAdverts;
+package pages.android.newAdverts;
 
-import core.InitialDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
-import pages.BasePage;
-import pages.profile.Profile;
+import pages.android.AndroidBasePage;
 
-public class NewAdvert extends BasePage {
+public class NewAdvert extends AndroidBasePage {
 
-    Profile profile = new Profile(InitialDriver.getDriver());
+    //Profile profile = new Profile(InitialDriver.getDriver());
     @AndroidFindBy(id = "se.scmv.belarus:id/edittext")
     private WebElement TITLE;
     @AndroidFindBy(id = "se.scmv.belarus:id/select")

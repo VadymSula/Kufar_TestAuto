@@ -1,21 +1,22 @@
-package tests.profilePageTests;
+package tests.android.profilePageTests;
 
 import core.InitialDriver;
 import enums.Credentials;
+import io.appium.java_client.android.AndroidDriver;
 import io.qameta.allure.Owner;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import pages.SomeScreen;
-import pages.profile.Profile;
-import pages.profile.Settings;
+import pages.android.SomeScreen;
+import pages.android.profile.Profile;
+import pages.android.profile.Settings;
 
 public class MyPayCardsTest {
-    SomeScreen someScreen = new SomeScreen(InitialDriver.getDriver());
-    Settings settings = new Settings(InitialDriver.getDriver());
-    Profile profile = new Profile(InitialDriver.getDriver());
+    SomeScreen someScreen = new SomeScreen((AndroidDriver) InitialDriver.getDriver());
+    Settings settings = new Settings((AndroidDriver) InitialDriver.getDriver());
+    Profile profile = new Profile((AndroidDriver) InitialDriver.getDriver());
 
     @BeforeTest
     public void setCap() {

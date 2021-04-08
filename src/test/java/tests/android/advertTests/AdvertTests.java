@@ -1,20 +1,21 @@
-package tests.advertTests;
+package tests.android.advertTests;
 
 import core.InitialDriver;
 import enums.Credentials;
+import io.appium.java_client.android.AndroidDriver;
 import io.qameta.allure.Owner;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.SomeScreen;
-import pages.newAdverts.NewAdvert;
-import pages.profile.Profile;
+import pages.android.SomeScreen;
+import pages.android.newAdverts.NewAdvert;
+import pages.android.profile.Profile;
 
 public class AdvertTests {
-    Profile profile = new Profile(InitialDriver.getDriver());
-    NewAdvert advert = new NewAdvert(InitialDriver.getDriver());
-    SomeScreen someScreen = new SomeScreen(InitialDriver.getDriver());
+    Profile profile = new Profile((AndroidDriver) InitialDriver.getDriver());
+    NewAdvert advert = new NewAdvert((AndroidDriver) InitialDriver.getDriver());
+    SomeScreen someScreen = new SomeScreen((AndroidDriver) InitialDriver.getDriver());
 
     @BeforeTest
     public void setCap() {

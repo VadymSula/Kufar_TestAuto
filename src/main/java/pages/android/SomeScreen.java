@@ -1,11 +1,11 @@
-package pages;
+package pages.android;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 
-public class SomeScreen extends BasePage {
+public class SomeScreen extends AndroidBasePage {
     @AndroidFindBy(id = "se.scmv.belarus:id/login")
     private WebElement LOGIN_BUTTON;
     @AndroidFindBy(id = "com.google.android.gms:id/cancel")

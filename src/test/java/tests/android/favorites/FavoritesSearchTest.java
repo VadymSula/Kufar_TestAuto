@@ -1,24 +1,25 @@
-package tests.favorites;
+package tests.android.favorites;
 
 import core.InitialDriver;
 import enums.Credentials;
+import io.appium.java_client.android.AndroidDriver;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.SomeScreen;
-import pages.advertisements.Advertisements;
-import pages.advertisements.Filters;
-import pages.favorites.Favorites;
+import pages.android.SomeScreen;
+import pages.android.advertisements.Advertisements;
+import pages.android.advertisements.Filters;
+import pages.android.favorites.Favorites;
 
 public class FavoritesSearchTest {
     private String expectedNameOfSearch;
-    Favorites favorites = new Favorites(InitialDriver.getDriver());
-    Advertisements advertisements = new Advertisements(InitialDriver.getDriver());
-    SomeScreen someScreen = new SomeScreen(InitialDriver.getDriver());
-    Filters filters = new Filters(InitialDriver.getDriver());
+    Favorites favorites = new Favorites((AndroidDriver) InitialDriver.getDriver());
+    Advertisements advertisements = new Advertisements((AndroidDriver) InitialDriver.getDriver());
+    SomeScreen someScreen = new SomeScreen((AndroidDriver) InitialDriver.getDriver());
+    Filters filters = new Filters((AndroidDriver) InitialDriver.getDriver());
 
     @BeforeTest
     public void logIn() {

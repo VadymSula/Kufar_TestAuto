@@ -1,4 +1,4 @@
-package tests;
+package tests.android;
 
 import core.InitialDriver;
 import io.qameta.allure.Allure;
