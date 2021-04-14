@@ -5,21 +5,32 @@ import enums.Direction;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.touch.TouchActions;
 
 import java.time.Duration;
+import java.util.HashMap;
 
 
 public class Screen {
     private AppiumDriver driver = InitialDriver.getDriver();
     private static Logger log = Logger.getLogger(Screen.class);
 
-    public void scrollablePage(String text) {
+    public void scrollablePageAndroid(String text) {
         ((AndroidDriver) driver).findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textContains(" + "\"" + text + "\"" + ").instance(0));");
         log.info("Page is scrollable");
+    }
+
+    public void scrollablePageIOS(WebElement webElement) {
+        TouchActions action = new TouchActions(driver);
+        action.scroll(webElement, 10, 100);
+        action.perform();
     }
 
     public void swipe(Direction dir) {

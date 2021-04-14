@@ -97,7 +97,7 @@ public class NewAdvert extends AndroidBasePage {
 
     @Step("Set Diagonal for advert")
     public void setDiagonal() {
-        screen.scrollablePage("Поддержка NFC");
+        screen.scrollablePageAndroid("Поддержка NFC");
         buttons.searchAndClickButtonBy(DIAGONAL);
     }
 
@@ -108,7 +108,7 @@ public class NewAdvert extends AndroidBasePage {
 
     @Step("Set Condition")
     public void clickConditionButton(WebElement condition) {
-        screen.scrollablePage("Возможен обмен");
+        screen.scrollablePageAndroid("Возможен обмен");
         buttons.searchAndClickButtonBy(condition);
     }
 
@@ -124,7 +124,7 @@ public class NewAdvert extends AndroidBasePage {
 
     @Step("Search  and click  Add Advert Finish button")
     public void clickFinishButtonAddAdvert() {
-        screen.scrollablePage("Подать объявление");
+        screen.scrollablePageAndroid("Подать объявление");
         buttons.searchAndClickButtonBy(FINISH_BUTTON_ADD_ADVERT);
     }
 

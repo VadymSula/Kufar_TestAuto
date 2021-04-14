@@ -37,7 +37,7 @@ public class SomeScreen extends AndroidBasePage {
     public void logOut() {
         buttons.searchAndClickButtonBy(MENU_PROFILE);
         buttons.searchAndClickButtonBy(AVATAR_BUTTON);
-        screen.scrollablePage("Выйти");
+        screen.scrollablePageAndroid("Выйти");
         buttons.searchAndClickButtonBy(LOGOUT_BUTTON);
     }
 

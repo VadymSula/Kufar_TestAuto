@@ -5,6 +5,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import pages.android.AndroidBasePage;
+import utils.PriceParser;
 
 public class Advert extends AndroidBasePage {
     @AndroidFindBy(id = "se.scmv.belarus:id/favoriteIcon")
@@ -37,7 +38,7 @@ public class Advert extends AndroidBasePage {
     @Step("Add advert to favorites")
     public void addAdToFavorites() {
         buttons.searchAndClickButtonBy(FAVORITE_ICON);
-        buttons.clickButtonBackOnKeyboard(getDriver());
+        buttons.clickButtonBackOnKeyboard((AndroidDriver) getDriver());
     }
 
     @Step("Get advert title")
@@ -57,13 +58,13 @@ public class Advert extends AndroidBasePage {
 
     @Step("Choose seller and go to him")
     public void goToSeller() {
-        screen.scrollablePage("Подписаться");
+        screen.scrollablePageAndroid("Подписаться");
         buttons.searchAndClickButtonBy(SELLER_INFO);
     }
 
     @Step("Go to information about seller")
     public void goToSellerInfo() {
-        screen.scrollablePage("Подписаться");
+        screen.scrollablePageAndroid("Подписаться");
     }
 
     @Step("Get name of seller")
@@ -78,11 +79,11 @@ public class Advert extends AndroidBasePage {
 
     @Step("Get price in USD")
     public int getPriceUSD() {
-        return Integer.parseInt(parsePriceUSD(getPriceUSDInStringFormat()));
+        return Integer.parseInt(PriceParser.androidParsePriceUSD(getPriceUSDInStringFormat()));
     }
 
     private String getPriceUSDInStringFormat() {
-        screen.scrollablePage("$");
+        screen.scrollablePageAndroid("$");
         return elements.getTextFromElement(PRICE_USD);
     }
 
@@ -93,17 +94,13 @@ public class Advert extends AndroidBasePage {
 
     @Step("Get count rooms of apartment from advert")
     public String getCountOfRoomsFromAdvert() {
-        screen.scrollablePage("Количество комнат");
+        screen.scrollablePageAndroid("Количество комнат");
         return elements.getTextFromElement(COUNT_OF_ROOMS);
     }
 
     @Step("Get name of category from advert")
     public String getNameOfCategoryFromAdvert() {
-        screen.scrollablePage("Категория");
+        screen.scrollablePageAndroid("Категория");
         return elements.getTextFromElement(NAME_OF_CATEGORY);
-    }
-
-    private String parsePriceUSD(String priceString) {
-        return priceString.substring(0, priceString.length() - 2).replaceAll("\\s","");
     }
 }

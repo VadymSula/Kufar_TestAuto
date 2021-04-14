@@ -1,6 +1,7 @@
 package pages.ios.filters;
 
-import io.appium.java_client.ios.IOSDriver;
+import enums.Direction;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 import pages.ios.IOSBasePage;
@@ -20,18 +21,22 @@ public class Filters extends IOSBasePage {
     private WebElement PRICE_TO;
     @iOSXCUITFindBy(iOSClassChain = "**/XCUIElementTypeTable[`name == \"search_table_view\"`]/XCUIElementTypeCell[9]/XCUIElementTypeOther[1]")
     private WebElement COUNT_OF_ROOMS_SECTION;
+    @iOSXCUITFindBy(accessibility = "1")
+    private WebElement COUNT_OF_ROOMS_TEXT;
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"1\"]/..")
     private WebElement FIRST_VARIANT_COUNT_OF_ROOMS;
     @iOSXCUITFindBy(accessibility = "Готово")
     private WebElement READY_BUTTON;
-    @iOSXCUITFindBy(iOSClassChain = "**/XCUIElementTypeWindow$type == 'XCUIElementTypeOther' AND index == 1]")
+    @iOSXCUITFindBy(xpath = "//*[contains(@label,'Показать')]/..")
     private WebElement VIEW_RESULTS_BUTTON;
     @iOSXCUITFindBy(iOSClassChain = "**/XCUIElementTypeNavigationBar[`name == \"Kufar.REMapView\"`]/XCUIElementTypeButton[1]")
     private WebElement GO_TO_LIST_VIEW_BUTTON;
+    @iOSXCUITFindBy(iOSClassChain = "**/XCUIElementTypeCollectionView/XCUIElementTypeCell[1]")
+    private WebElement FIRST_ELEMENT_OF_ADVERTS;
 
 // TODO Добавить getText() для сравнений
 
-    public Filters(IOSDriver driver) {
+    public Filters(AppiumDriver driver) {
         super(driver);
     }
 
@@ -51,9 +56,18 @@ public class Filters extends IOSBasePage {
     }
 
     public void chooseCountOfRooms() {
+        screen.swipe(Direction.UP);
         buttons.searchAndClickButtonBy(COUNT_OF_ROOMS_SECTION);
         buttons.searchAndClickButtonBy(FIRST_VARIANT_COUNT_OF_ROOMS);
         buttons.searchAndClickButtonBy(READY_BUTTON);
+    }
+
+    public String getCountOfRooms() {
+        return elements.getTextFromElement(COUNT_OF_ROOMS_TEXT);
+    }
+
+    public void goToFirstAdvert() {
+        buttons.searchAndClickButtonBy(FIRST_ELEMENT_OF_ADVERTS);
     }
 
     public void getViewResults() {

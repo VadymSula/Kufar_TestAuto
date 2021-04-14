@@ -33,9 +33,8 @@ public class InitialDriver {
     }
 
     private static void setCapabilities() {
-        //TODO Узнать как разделить кап-с
-        switch (cap.getPlatform()) {
-            case ANDROID:
+        switch (PropertiesConfig.getProperty("platform").toUpperCase()) {
+            case "ANDROID":
                 cap.setCapability(MobileCapabilityType.DEVICE_NAME, PropertiesConfig.getProperty("deviceName"));
                 cap.setCapability(MobileCapabilityType.PLATFORM_NAME, PropertiesConfig.getProperty("platformName"));
                 cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, PropertiesConfig.getProperty("platformVersion"));
@@ -44,21 +43,18 @@ public class InitialDriver {
                 cap.setCapability("appPackage", PropertiesConfig.getProperty("myAppPackage"));
                 cap.setCapability("appActivity", PropertiesConfig.getProperty("myAppActivity"));
                 break;
-            case IOS:
+            case "IOS":
                 cap.setCapability(MobileCapabilityType.DEVICE_NAME, PropertiesConfig.getProperty("iosDeviceName"));
                 cap.setCapability(MobileCapabilityType.PLATFORM_NAME, PropertiesConfig.getProperty("iosPlatformName"));
                 cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, PropertiesConfig.getProperty("iosPlatformVersion"));
-                cap.setCapability(MobileCapabilityType.NO_RESET, false);
+                cap.setCapability(MobileCapabilityType.NO_RESET, true);
                 cap.setCapability(MobileCapabilityType.UDID, PropertiesConfig.getProperty("iosUdId"));
                 cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, PropertiesConfig.getProperty("iosAutomationName"));
                 cap.setCapability("bundleId", PropertiesConfig.getProperty("iosBundleId"));
                 break;
             default:
-                try {
-                    throw new Exception();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                log.info("Driver is not initialize");
+                break;
         }
     }
 }

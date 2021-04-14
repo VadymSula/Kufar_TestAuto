@@ -71,7 +71,7 @@ public class Filters extends AndroidBasePage {
 
     @Step("Save search to favorite")
     public void saveSearch() {
-        screen.scrollablePage("Cохранить поиск");
+        screen.scrollablePageAndroid("Cохранить поиск");
         screen.swipe(Direction.UP);
         buttons.searchAndClickButtonBy(SAVE_SEARCH_BUTTON);
     }

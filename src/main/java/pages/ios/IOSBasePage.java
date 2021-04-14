@@ -3,6 +3,7 @@ package pages.ios;
 import elements.Buttons;
 import elements.Elements;
 import elements.Screen;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
@@ -11,13 +12,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 public class IOSBasePage {
-    private IOSDriver driver;
+    private AppiumDriver driver;
 
     protected Buttons buttons;
     protected Screen screen;
     protected Elements elements;
 
-    public IOSBasePage(IOSDriver driver) {
+    public IOSBasePage(AppiumDriver driver) {
         buttons = new Buttons();
         screen = new Screen();
         elements = new Elements();
@@ -35,10 +36,10 @@ public class IOSBasePage {
     protected WebElement ADD_ADVERT;
 
     @iOSXCUITFindBy(iOSClassChain = "**/XCUIElementTypeTabBar[`label == \"Панель вкладок\"`]/XCUIElementTypeButton[2]")
-    protected WebElement MENU_LISTING;
+    protected WebElement MENU_FAVORITES;
 
     @iOSXCUITFindBy(iOSClassChain = "**/XCUIElementTypeButton[`value == \"1\"`]")
-    protected WebElement MENU_FAVORITES;
+    protected WebElement MENU_LISTING;
 
     @Step("Go to advertisements list")
     public void goToAdvertisements() {
@@ -65,11 +66,11 @@ public class IOSBasePage {
         buttons.searchAndClickButtonBy(ADD_ADVERT);
     }
 
-    public IOSDriver getDriver() {
+    public AppiumDriver getDriver() {
         return driver;
     }
 
-    public void setDriver(IOSDriver driver) {
+    public void setDriver(AppiumDriver driver) {
         this.driver = driver;
     }
 }

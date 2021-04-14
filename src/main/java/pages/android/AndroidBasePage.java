@@ -3,6 +3,7 @@ package pages.android;
 import elements.Buttons;
 import elements.Elements;
 import elements.Screen;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -10,13 +11,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 public class AndroidBasePage {
-    private AndroidDriver driver;
+    private AppiumDriver driver;
 
     protected Buttons buttons;
     protected Screen screen;
     protected Elements elements;
 
-    public AndroidBasePage(AndroidDriver driver) {
+    public AndroidBasePage(AppiumDriver driver) {
         buttons = new Buttons();
         screen = new Screen();
         elements = new Elements();
@@ -39,11 +40,11 @@ public class AndroidBasePage {
     @AndroidFindBy(id = "se.scmv.belarus:id/menu_profile")
     protected WebElement MENU_PROFILE;
 
-    public AndroidDriver getDriver() {
+    public AppiumDriver getDriver() {
         return driver;
     }
 
-    public void setDriver(AndroidDriver driver) {
+    public void setDriver(AppiumDriver driver) {
         this.driver = driver;
     }
 }
